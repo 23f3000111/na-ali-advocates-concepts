@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>N.A. Ali &amp; Company Advocates</title>
+    <script>
+      // GitHub Pages has no SPA fallback: send deep links (e.g. /site-1/practice/family-law)
+      // to that site's index with the path in ?p=, which the site restores on load.
+      (function () {
+        var root = '/na-ali-advocates-concepts/'
+        var path = window.location.pathname
+        var match = path.slice(root.length).match(/^(site-[12])(\/.*)?$/)
+        if (!match) {
+          window.location.replace(root)
+          return
+        }
+        var base = root + match[1] + '/'
+        var rest = match[2] || '/'
+        window.location.replace(base + '?p=' + encodeURIComponent(rest) + window.location.hash)
+      })()
+    </script>
+  </head>
+  <body></body>
+</html>
